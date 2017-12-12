@@ -11,6 +11,10 @@
 # production
 /build
 
+sites/performance-dashboard/build
+sites/red-tape-reduction/build
+sites/smart-cities/build
+
 # misc
 .DS_Store
 .env.local

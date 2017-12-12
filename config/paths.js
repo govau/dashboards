@@ -15,7 +15,7 @@ const SITES = [
   'red-tape-reduction',
 ];
 
-const getProjectUrl = (path) => {
+const resolveToSite = (path) => {
   const projectArg = process.argv.find(arg => arg.startsWith('site='));
 
   if (!projectArg) throw Error('You must provide a "site" arg to start.js');
@@ -26,7 +26,7 @@ const getProjectUrl = (path) => {
     throw Error(`No such project: ${projectName}`);
   }
 
-  return `src/${projectName}/${path}`;
+  return `sites/${projectName}/${path}`;
 };
 
 const envPublicUrl = process.env.PUBLIC_URL;
@@ -60,16 +60,19 @@ function getServedPath(appPackageJson) {
 
 // config after eject: we're in ./config/
 module.exports = {
+  // paths shared between sites
   dotenv: resolveApp('.env'),
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp(getProjectUrl('src/index.js')),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+
+  // site-specific paths
+  appBuild: resolveApp(resolveToSite('build')),
+  appPublic: resolveApp(resolveToSite('public')),
+  appHtml: resolveApp(resolveToSite('public/index.html')),
+  appIndexJs: resolveApp(resolveToSite('src/index.js')),
+  appSrc: resolveApp(resolveToSite('src')),
 };
