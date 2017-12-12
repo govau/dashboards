@@ -9,24 +9,24 @@ const url = require('url');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
-const SITES = [
-  'smart-cities',
-  'performance-dashboard',
-  'red-tape-reduction',
-];
-
 const resolveToSite = (path) => {
-  const projectArg = process.argv.find(arg => arg.startsWith('site='));
+  const SITES = [
+    'smart-cities',
+    'performance-dashboard',
+    'red-tape-reduction',
+  ];
 
-  if (!projectArg) throw Error('You must provide a "site" arg to start.js');
+  const siteArg = process.argv.find(arg => arg.startsWith('site='));
 
-  const projectName = projectArg.split('=')[1];
+  if (!siteArg) throw Error('You must provide a "site" arg to start.js');
 
-  if (!SITES.includes(projectName)) {
-    throw Error(`No such project: ${projectName}`);
+  const siteName = siteArg.split('=')[1];
+
+  if (!SITES.includes(siteName)) {
+    throw Error(`No such site: ${siteName}`);
   }
 
-  return `sites/${projectName}/${path}`;
+  return `sites/${siteName}/${path}`;
 };
 
 const envPublicUrl = process.env.PUBLIC_URL;
