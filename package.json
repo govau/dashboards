@@ -43,8 +43,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "start:sc": "node scripts/start.js site=smart-cities",
+    "start:pd": "node scripts/start.js site=performance-dashboard",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

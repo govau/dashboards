@@ -9,6 +9,26 @@ const url = require('url');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
+const SITES = [
+  'smart-cities',
+  'performance-dashboard',
+  'red-tape-reduction',
+];
+
+const getProjectUrl = (path) => {
+  const projectArg = process.argv.find(arg => arg.startsWith('site='));
+
+  if (!projectArg) throw Error('You must provide a "site" arg to start.js');
+
+  const projectName = projectArg.split('=')[1];
+
+  if (!SITES.includes(projectName)) {
+    throw Error(`No such project: ${projectName}`);
+  }
+
+  return `src/${projectName}/${path}`;
+};
+
 const envPublicUrl = process.env.PUBLIC_URL;
 
 function ensureSlash(path, needsSlash) {
@@ -44,7 +64,7 @@ module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp('src/index.js'),
+  appIndexJs: resolveApp(getProjectUrl('src/index.js')),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),
