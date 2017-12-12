@@ -1,0 +1,171 @@
+@import '~style/main';
+
+.header {
+  background: $color-primary--600;
+  color: $color-white;
+}
+
+// this is the minor header on desktop size
+// and the only header on mobile/tablet
+.govContainer {
+  display: inline-flex;
+  position: relative;
+  z-index: $z-index-header;
+  height: $main-header-height-mobile;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: center;
+
+  @include for-desktop-up {
+    display: flex;
+    padding-left: 30px;
+    height: $gov-header-height;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    background: $color-primary--500;
+
+    > * {
+      margin-right: 8px;
+    }
+  }
+}
+
+.compactTitle,
+.compactSubtitle {
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
+.govAu,
+.govWebsite {
+  display: none;
+
+  @include for-desktop-up {
+    display: inline;
+  }
+}
+
+.govAu {
+  font-size: 14px;
+}
+
+.govWebsite {
+  font-size: 12px;
+}
+
+.mainContainer {
+  position: absolute;
+  right: 4px;
+  top: 12px;
+
+  @include for-desktop-up {
+    position: relative;
+    z-index: $z-index-header;
+    display: flex;
+    width: 100%;
+    height: $main-header-height-desktop;
+    justify-content: space-between;
+  }
+}
+
+.titleContainer,
+.orgContainer {
+  display: inline-flex;
+  flex-direction: column;
+
+  @include for-desktop-up {
+    padding: 0 32px;
+  }
+}
+
+.orgContainer {
+  align-items: flex-end;
+}
+
+.titleContainer,
+.orgLink {
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+  }
+}
+
+.star {
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+    height: 18px;
+    width: 18px;
+    flex: 0 1 auto;
+  }
+}
+
+.hamburger {
+  margin-right: 8px;
+  margin-left: 8px;
+
+  @include for-desktop-up {
+    display: none;
+  }
+}
+
+.projectStatus {
+  margin-top: 12px;
+  background: $color-white;
+  align-self: flex-start;
+  color: $color-primary--600;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.titleLinkWrapper {
+  text-decoration: none;
+}
+
+.title,
+.subtitle {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 38px;
+}
+
+.title {
+  margin-top: 6px;
+}
+
+.compactTitle {
+  font-size: 14px;
+  line-height: 14px;
+  flex: 0 0 16px;
+}
+
+.compactSubtitle {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 300;
+  flex: 0 0 14px;
+}
+
+.orgLink {
+  margin-top: 14px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.orgLogo {
+  height: 45px;
+  width: 73px;
+}
+
+.contactLink {
+  border-bottom: 1px solid $color-highlight;
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+}

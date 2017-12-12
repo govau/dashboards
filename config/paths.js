@@ -18,7 +18,8 @@ const resolveToSite = (path) => {
 
   const siteArg = process.argv.find(arg => arg.startsWith('site='));
 
-  if (!siteArg) throw Error('You must provide a "site" arg to start.js');
+  // test scripts don't define a site, so it's OK to return the path here
+  if (!siteArg) return path;
 
   const siteName = siteArg.split('=')[1];
 
@@ -75,4 +76,5 @@ module.exports = {
   appHtml: resolveApp(resolveToSite('public/index.html')),
   appIndexJs: resolveApp(resolveToSite('src/index.js')),
   appSrc: resolveApp(resolveToSite('src')),
+  appStyle: resolveApp(resolveToSite('src/style')),
 };

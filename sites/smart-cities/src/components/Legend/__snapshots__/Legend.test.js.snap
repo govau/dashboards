@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match Snapshot 1`] = `
+"<div className={[undefined]}>
+  <div className=\\"legendItem\\">
+    <svg width=\\"20\\" height=\\"20\\">
+      <circle cx=\\"10\\" cy=\\"10\\" r=\\"10\\" fill=\\"red\\" />
+    </svg>
+    <span className=\\"legendItemText\\">
+      House
+    </span>
+  </div>
+  <div className=\\"legendItem\\">
+    <svg width=\\"20\\" height=\\"20\\">
+      <circle cx=\\"10\\" cy=\\"10\\" r=\\"10\\" fill=\\"blue\\" />
+    </svg>
+    <span className=\\"legendItemText\\">
+      Apartment
+    </span>
+  </div>
+  <div className=\\"legendItem\\">
+    <svg width=\\"20\\" height=\\"20\\">
+      <circle cx=\\"10\\" cy=\\"10\\" r=\\"10\\" fill=\\"grey\\" />
+    </svg>
+    <span className=\\"legendItemText\\">
+      Other
+    </span>
+  </div>
+</div>"
+`;

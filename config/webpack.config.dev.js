@@ -84,6 +84,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
+      style: paths.appStyle,
       
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -157,18 +158,25 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.scss$/,
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
-                  importLoaders: 1,
+                  sourceMap: true,
+                  modules: true,
+                  importLoaders: true,
+                  // hash the localIdentName here to force use of it
+                  // but still include the local name so we can see what's going on during development
+                  // but in prod use the hash only
+                  localIdentName: '[name]-[local]--[hash:base64:4]',
                 },
               },
               {
                 loader: require.resolve('postcss-loader'),
                 options: {
+                  sourceMap: 'inline',
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
@@ -184,6 +192,12 @@ module.exports = {
                       flexbox: 'no-2009',
                     }),
                   ],
+                },
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
                 },
               },
             ],

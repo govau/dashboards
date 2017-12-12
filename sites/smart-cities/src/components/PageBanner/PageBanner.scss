@@ -1,0 +1,102 @@
+@import '~style/main';
+
+.container {
+  @include container;
+
+  padding-top: 16px;
+
+  @include for-tablet-portrait-up {
+    padding-top: 32px;
+  }
+}
+
+.textAndIndicator {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+    margin-bottom: 32px;
+  }
+}
+
+.titleText {
+  margin-bottom: 32px;
+
+  @include for-tablet-portrait-up {
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+
+  @include for-tablet-portrait-up {
+    font-size: 36px;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 44px;
+  }
+}
+
+.subTitle {
+  font-weight: 300;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  @include for-tablet-landscape-up {
+    font-size: 22px;
+    font-weight: 300;
+  }
+}
+
+.featuredTextWrapper {
+  padding-top: 32px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+}
+
+.featuredText {
+  margin-right: 6px;
+  font-weight: 500;
+}
+
+.heroSubCategoryWrapper {
+  padding-top: 28px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.heroSubCategoryText {
+  font-weight: 500;
+}
+
+.card {
+  width: 100%;
+
+  @include for-tablet-portrait-up {
+    flex: none;
+    width: 256px;
+    margin-left: auto; // push to the right
+  }
+}
+
+.indicatorTypeMarkWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.indicatorTypeMark {
+  margin-right: 8px;
+}

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match Snapshot 1`] = `
+"<header className=\\"header\\">
+  <div className=\\"govContainer\\">
+    <HamburgerButton className=\\"hamburger\\" onClick={[Function]} label=\\"open navigation menu\\" />
+    <img className=\\"star\\" src=\\"star-white.svg\\" alt=\\"star icon\\" />
+    <span className=\\"govAu\\">
+      GOV.AU
+    </span>
+    <span className=\\"govWebsite\\">
+      Official Australian Government Website
+    </span>
+    <div className=\\"compactTitle\\">
+      National Cities Performance
+    </div>
+    <div className=\\"compactSubtitle\\">
+      Framework Dashboard
+    </div>
+  </div>
+  <div className=\\"mainContainer\\">
+    <div className=\\"titleContainer\\">
+      <Pill height={16} className=\\"projectStatus\\">
+        ALPHA
+      </Pill>
+      <NavLink className=\\"titleLinkWrapper\\" to=\\"/all-cities/overview\\" activeClassName=\\"active\\" ariaCurrent=\\"true\\">
+        <h1 className=\\"title\\">
+          National Cities Performance
+        </h1>
+      </NavLink>
+      <div className=\\"subtitle\\">
+        Framework Dashboard
+      </div>
+    </div>
+    <div className=\\"orgContainer\\">
+      <a className=\\"orgLink\\" href=\\"https://dta.gov.au/\\">
+        <img className=\\"orgLogo\\" src=\\"dta-logo.svg\\" alt=\\"DTA logo\\" />
+      </a>
+      <FeedbackButton />
+    </div>
+  </div>
+  <CategoryNavContainer categoryId=\\"jobs\\" cityId=\\"perth\\" cityName={[undefined]} />
+</header>"
+`;

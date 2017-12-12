@@ -1,0 +1,15 @@
+@import '~style/main';
+
+.legendItem {
+  margin-left: 24px;
+
+  > * {
+    vertical-align: middle;
+  }
+}
+
+.legendItemText {
+  padding-left: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}

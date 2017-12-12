@@ -1,0 +1,112 @@
+@import '~style/main';
+
+.wrapper {
+  border-top: 4px solid $color-white;
+}
+
+.container {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+
+  @include for-tablet-landscape-up {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+
+.textWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+
+  @include for-tablet-landscape-up {
+    width: 25%;
+    margin-bottom: 0;
+    padding-top: 16px;
+    flex: none;
+  }
+}
+
+.iconWrapper {
+  flex: none;
+  margin-right: 8px;
+}
+
+.title {
+  margin: 0 16px 0 6px;
+  font-size: 16px;
+  line-height: 1.2;
+
+  @include for-desktop-up {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: column;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+    margin: 0 -8px;
+    align-items: flex-start;
+  }
+
+  @include for-tablet-landscape-up {
+    width: 75%;
+    margin: 0;
+  }
+}
+
+.cardWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include for-tablet-portrait-up {
+    width: calc(33.333% - 16px);
+    margin: 0 8px;
+  }
+
+  @include for-tablet-landscape-up {
+    margin: 0 0 0 16px;
+  }
+}
+
+.card {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.linkWrapper {
+  @include shadow;
+
+  display: inline-block;
+  align-self: flex-end;
+  font-size: 14px;
+  font-weight: 600;
+  background: $color-white;
+  padding: 0 5px 0 20px;
+  margin-bottom: 16px;
+  transition: box-shadow $animation-duration;
+
+  &:hover {
+    @include shadow(2);
+  }
+}
+
+.linkText {
+  margin-right: 12px;
+  letter-spacing: 0.6px;
+}
+
+.linkIcon {
+  transform: rotate(90deg);
+  margin-top: -4px;
+}

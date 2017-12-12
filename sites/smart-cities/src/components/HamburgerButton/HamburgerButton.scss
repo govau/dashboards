@@ -1,0 +1,21 @@
+@import '~style/main';
+
+.button {
+  width: $main-header-height-mobile;
+  height: $main-header-height-mobile;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  background: $color-white;
+  height: 4px;
+  border-radius: 2px;
+  margin: 3px;
+}

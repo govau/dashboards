@@ -1,0 +1,11 @@
+@import '~style/main';
+
+.pageWrapper {
+  @include for-desktop-up {
+    padding-left: $sidebar-width;
+  }
+}
+
+.main {
+  min-height: 100vh; // stop the footer creeping up the page
+}

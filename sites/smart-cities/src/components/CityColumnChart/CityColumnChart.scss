@@ -1,0 +1,89 @@
+@import '~style/main';
+
+.wrapper {
+  padding-top: 16px;
+  margin-bottom: 48px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 300;
+  margin-right: 8px;
+
+  @include for-tablet-landscape-up {
+    font-size: 24px;
+  }
+}
+
+.metaWrapper {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.indicatorTypeMark {
+  margin: -3px 16px 0 0;
+}
+
+.legendWrapper {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.axisTitle {
+  height: 20px; // we want it to take up space even with no text
+  margin-top: 16px;
+  font-size: 12px;
+}
+
+.chartWrapper {
+  min-height: 400px; // so when the charts are loading it doesn't collapse
+
+  @include for-tablet-landscape-up {
+    min-height: 500px;
+  }
+}
+
+.aboutChartIcon {
+  margin-top: 3px;
+}
+
+.table {
+  @include hidden;
+}
+
+:global(.cityColumnChartTooltipHeader) {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+:global(.cityColumnChartTooltipRow) {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 12px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 4px;
+  }
+}
+
+:global(.cityColumnChartTooltipDot) {
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+
+:global(.cityColumnChartTooltipValue) {
+  font-weight: 700;
+}

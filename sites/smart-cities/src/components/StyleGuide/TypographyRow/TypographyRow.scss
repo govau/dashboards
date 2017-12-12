@@ -1,0 +1,27 @@
+@import '~style/main';
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid $color-primary--040;
+  padding: 20px 0;
+
+  @include for-tablet-landscape-up {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.css {
+  display: flex;
+
+  p:not(:last-child) {
+    margin-right: 4px;
+  }
+
+  @include for-tablet-landscape-up {
+    flex-direction: column;
+  }
+}

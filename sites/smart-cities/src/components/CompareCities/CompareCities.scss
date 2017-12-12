@@ -1,0 +1,73 @@
+@import '~style/main';
+
+.container {
+  @include container;
+}
+
+.wrapper {
+  @include shadow;
+
+  margin: 32px 0;
+  border-radius: 8px;
+  background: $color-white;
+  border: 1px solid $color-grey--200;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  border-bottom: 1px solid $color-grey--200;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+    align-items: baseline;
+    padding: 24px 30px;
+  }
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+    margin-right: 1ch;
+    margin-bottom: 0;
+  }
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  @include for-tablet-landscape-up {
+    font-size: 22px;
+    font-weight: 300;
+  }
+}
+
+.body {
+  padding: 15px;
+  columns: 140px;
+  column-gap: 0;
+  background: $color-grey--060;
+
+  @include for-tablet-landscape-up {
+    padding: 31px;
+  }
+}
+
+.checkbox {
+  display: block;
+  break-inside: avoid-column;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 13px;
+  font-size: 12px;
+}

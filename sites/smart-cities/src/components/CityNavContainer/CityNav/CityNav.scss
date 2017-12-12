@@ -1,0 +1,61 @@
+@import '~style/main';
+
+.link {
+  display: block;
+  transition: $animation-duration;
+  color: $color-white;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+
+  .citySelected & {
+    color: $color-primary--060;
+  }
+
+  &:hover {
+    background: $color-primary--800;
+    color: $color-white;
+  }
+
+  &.link__active {
+    background: $color-primary--900;
+    color: $color-white;
+  }
+}
+
+.allCitiesLink {
+  display: flex;
+  align-items: center;
+  height: $top-nav-height-mobile;
+  margin-bottom: 6px;
+  padding: 0 16px;
+  background: $color-primary--800;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+
+  .citySelected & {
+    color: $color-primary--080;
+  }
+
+  &.link__active {
+    font-weight: 500;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  @include for-desktop-up {
+    height: $top-nav-height-desktop;
+  }
+}
+
+.cityLink {
+  padding: 0 10px 0 32px;
+  line-height: 40px; // height is set because when selected this turns bold
+
+  &.link__active {
+    font-weight: 500;
+  }
+}

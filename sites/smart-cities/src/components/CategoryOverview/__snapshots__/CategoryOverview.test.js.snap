@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match Snapshot 1`] = `
+"<div className=\\"categoryWrapper\\" style={{...}}>
+  <div className=\\"category\\">
+    <div className=\\"categoryIcon\\">
+      <Icon icon=\\"infrastructureGettingToWork\\" color=\\"JOBS_700\\" />
+    </div>
+    <div className=\\"textAndIndicatorWrapper\\">
+      <div className=\\"categoryTextWrapperWrapper\\">
+        <div className=\\"categoryTextWrapper\\">
+          <h2 className=\\"categoryTitle\\">
+            Jobs &amp; skills
+          </h2>
+          <p className=\\"categoryDescription\\">
+            The short description
+          </p>
+          <p className=\\"subCategoryWrapperText\\">
+            Categories include:
+          </p>
+          <div>
+            <NavLink to=\\"/perth/jobs#sc-employment\\" activeClassName=\\"active\\" ariaCurrent=\\"true\\">
+              <Pill className=\\"subCategoryLink\\" style={{...}} shadow={true}>
+                Employment
+              </Pill>
+            </NavLink>
+            <NavLink to=\\"/perth/jobs#sc-education\\" activeClassName=\\"active\\" ariaCurrent=\\"true\\">
+              <Pill className=\\"subCategoryLink\\" style={{...}} shadow={true}>
+                Education
+              </Pill>
+            </NavLink>
+          </div>
+        </div>
+      </div>
+      <div className=\\"indicatorCardAndLink\\">
+        <div className=\\"indicatorCards\\">
+          <IndicatorCard className=\\"indicatorCard\\" color=\\"JOBS_700\\" colorName=\\"jobs\\" indicatorId=\\"population\\" cities={[undefined]} city={{...}} />
+        </div>
+        <NavLink to=\\"/perth/jobs\\" className=\\"categoryLinkWrapper\\" activeClassName=\\"active\\" ariaCurrent=\\"true\\">
+          <Pill className=\\"categoryLinkPill\\" style={{...}} height={30} shadow={false}>
+            <span className=\\"categoryLinkText\\">
+              Jobs &amp; skills
+               section
+            </span>
+            <Icon icon=\\"rightArrowInCircleInverted\\" size={20} color=\\"JOBS_700\\" />
+          </Pill>
+        </NavLink>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

@@ -1,0 +1,166 @@
+@import '~style/main';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: $top-nav-height-mobile;
+  background: $color-white;
+  z-index: $z-index-cat-nav;
+
+  // Colors are all inverted on the overview page
+  &.wrapper__overview {
+    background: transparent;
+  }
+
+  @include for-desktop-up {
+    height: $top-nav-height-desktop;
+    padding-left: 0;
+  }
+}
+
+.categoryNav {
+  padding-left: 16px;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  @include for-desktop-up {
+    @include container;
+  }
+}
+
+.link {
+  height: 100%;
+  display: inline-block;
+  padding: 8px 0;
+  margin-right: 10px;
+  text-decoration: none;
+
+  @include for-desktop-up {
+    margin-right: 8px;
+    padding: 20px 0;
+  }
+
+  @include for-big-desktop-up {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    padding-right: 16px;
+  }
+
+  &:hover,
+  &.link__active {
+    .linkText {
+      color: $color-white;
+    }
+
+    // overview and context have the same style for hover and active
+    // the other links are different for hover and active
+    .overview {
+      border: 2px solid $color-grey--500;
+      color: $color-grey--700;
+
+      .wrapper__overview & {
+        color: $color-white;
+        border-color: $color-primary--500;
+      }
+    }
+
+    .primary {
+      border: 2px solid $color-primary--600;
+      color: $color-grey--700;
+
+      .wrapper__overview & {
+        color: $color-white;
+        border-color: $color-white;
+      }
+    }
+  }
+
+  &:hover {
+    .linkText {
+      @include shadow;
+
+      border-color: transparent;
+    }
+
+    .jobs {
+      background: $color-jobs--500;
+    }
+
+    .infrastructure {
+      background: $color-infrastructure--500;
+    }
+
+    .housing {
+      background: $color-housing--500;
+    }
+
+    .liveability {
+      background: $color-liveability--500;
+    }
+
+    .innovation {
+      background: $color-innovation--500;
+    }
+
+    .planning {
+      background: $color-planning--500;
+    }
+  }
+
+  &.link__active {
+    .jobs {
+      background: $color-jobs--600;
+    }
+
+    .infrastructure {
+      background: $color-infrastructure--600;
+    }
+
+    .housing {
+      background: $color-housing--900; // 900 to pass WCAG AA
+    }
+
+    .liveability {
+      background: $color-liveability--600;
+    }
+
+    .innovation {
+      background: $color-innovation--600;
+    }
+
+    .planning {
+      background: $color-planning--600;
+    }
+  }
+}
+
+.linkText {
+  @include shadow;
+
+  padding: 0 24px;
+  border-radius: 100px;
+  color: $color-grey--700;
+  border: 2px solid transparent;
+  font-size: 14px;
+  transition: $animation-duration; // box-shadow and color
+
+  .wrapper__overview & {
+    color: $color-white;
+    border-color: $color-white-20;
+    box-shadow: none;
+  }
+
+  @include for-desktop-up {
+    padding: 0 12px;
+    font-size: 16px;
+  }
+
+  @include for-big-desktop-up {
+    padding: 0 24px;
+  }
+}

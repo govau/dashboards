@@ -1,0 +1,24 @@
+$app-min-width: 320px;
+$app-max-width: 1140px; // the max width of content within the page
+
+$gov-header-height: 32px; // the small top header section, doesn't show on mobile
+$main-header-height-mobile: 48px;
+$main-header-height-desktop: 150px;
+
+$sidebar-width: 280px;
+$top-nav-height-mobile: 45px;
+$top-nav-height-desktop: 75px;
+
+@mixin container {
+  max-width: $app-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow: hidden;
+
+  @include for-tablet-landscape-up {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

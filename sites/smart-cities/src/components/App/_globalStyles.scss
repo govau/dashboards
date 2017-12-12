@@ -1,0 +1,50 @@
+@import '~style/main';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-width: $app-min-width;
+  color: $color-grey--800;
+}
+
+:global(.block-scroll) {
+  overflow: hidden;
+  overflow-y: scroll !important;
+  position: fixed;
+  width: 100%;
+}
+
+p,
+figure,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+@import '~style/main';
+
+.wrapper {
+  position: relative;
+  height: 120px;
+
+  @include for-tablet-portrait-up {
+    height: 160px;
+  }
+
+  @include for-tablet-landscape-up {
+    height: 240px;
+  }
+
+  @include for-desktop-up {
+    height: 288px;
+  }
+}
+
+.container {
+  @include container;
+
+  position: relative; // above the absolute background panels
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  height: 100%;
+
+  @include for-tablet-portrait-up {
+    padding: 20px;
+  }
+
+  @include for-tablet-landscape-up {
+    padding: 32px;
+  }
+}
+
+.photoWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.photo {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+
+  // For browsers that support object-fit (and @supports)
+  // set the width to 100%
+  @supports (object-fit: cover) {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.title {
+  line-height: 1; // it wraps on small screens
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+
+  @include for-tablet-portrait-up {
+    font-size: 44px;
+    font-weight: 300;
+  }
+
+  @include for-desktop-up {
+    font-size: 72px;
+    font-weight: 300;
+  }
+}
