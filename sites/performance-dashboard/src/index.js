@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// Entry point for all performance-dashboard pages
+import './dashboard-index/index';
+// TODO (davidg):
+// legacy
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// TODO (davidg): bring in stuff from this file:
+// including the main .scss
+
+// import './dashboard/scripts/main.js';
