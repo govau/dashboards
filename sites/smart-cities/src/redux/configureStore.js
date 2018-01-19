@@ -5,7 +5,7 @@ import { createStore, compose } from 'redux';
 import rootReducer from './reducers';
 
 const configureStore = (bootState) => {
-  const composeEnhancers = __DEV__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  const composeEnhancers = process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 

@@ -30,7 +30,7 @@ const SubCategorySummary = (props) => {
     const lastOne = i === (indicatorIds.length - 1);
 
     const plural = props.charts.length !== 1;
-    const linkText = `View ${plural ? 'all' : ''} ${props.charts.length} chart${plural ? 's' : ''}`;
+    const linkText = `View${plural ? ' all' : ''} ${props.charts.length} chart${plural ? 's' : ''}`;
 
     return (
       <div
