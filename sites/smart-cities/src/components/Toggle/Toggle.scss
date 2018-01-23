@@ -7,9 +7,6 @@ $toggle-width: 100px;
   position: relative;
   font-size: 16px;
   font-weight: 500;
-}
-
-.toggle {
   display: flex;
   flex-direction: column;
 
@@ -17,13 +14,6 @@ $toggle-width: 100px;
     flex-direction: row;
     align-items: center;
   }
-}
-
-.input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
 }
 
 .labelText {
@@ -42,6 +32,13 @@ $toggle-width: 100px;
   width: $toggle-width;
   height: $toggle-height;
   cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
 .onOff {
@@ -83,7 +80,7 @@ $toggle-width: 100px;
     border: 1px solid $color-planning--200;
   }
 
-  .checkbox:checked ~ & {
+  .input:checked ~ & {
     background: $color-primary--600;
 
     .jobs & { background: $color-jobs--500; }
@@ -109,7 +106,7 @@ $toggle-width: 100px;
     opacity: 1;
     color: $color-grey--800;
 
-    .checkbox:checked ~ & {
+    .input:checked ~ & {
       opacity: 0;
     }
   }
@@ -120,7 +117,7 @@ $toggle-width: 100px;
     opacity: 0;
     color: white;
 
-    .checkbox:checked ~ & {
+    .input:checked ~ & {
       opacity: 1;
     }
   }
@@ -138,7 +135,7 @@ $toggle-width: 100px;
   background: white;
   transition: transform $animation-duration;
 
-  .checkbox:checked ~ & {
+  .input:checked ~ & {
     transform: translateX($toggle-width - $toggle-height);
   }
 }

@@ -1,5 +1,5 @@
 
-import './render';
+import './app';
 
 // check if HMR is enabled
 if (module.hot) {
